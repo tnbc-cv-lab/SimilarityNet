@@ -3,7 +3,7 @@ from augments import augment_main
 from dataset import dataset_df_main
 from train import train_main
 
-def make_dataset():
+def get_dataset():
     augment_main()
     dataset_df_main()
 
