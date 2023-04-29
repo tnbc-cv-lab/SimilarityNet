@@ -43,7 +43,8 @@ def main():
     
     train_ds, valid_ds = make_tf_dataset(data_df)
     
-    history = model.fit(train_ds, epochs=10, validation_data=valid_ds)
+    # early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=3)
+    history = model.fit(train_ds, epochs=20, validation_data=valid_ds)
     plot_accuracy(history)
     
     
