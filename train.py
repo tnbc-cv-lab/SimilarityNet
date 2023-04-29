@@ -37,7 +37,7 @@ def make_tf_dataset(df):
     
     return train_dataset, valid_dataset
 
-def main():
+def train_main():
     data_df = pd.read_csv('/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/data_df.csv', index_col=0)
     model = get_model()
     
@@ -49,4 +49,4 @@ def main():
     
     
 if __name__ == "__main__":
-    main()
+    train_main()

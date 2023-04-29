@@ -4,8 +4,10 @@ from PIL import Image
 import os
 import random
 
-AUGMENT_PATH = 'C:/Niranjan/Ashoka/Research/TNBC/SimilarityNet/Data/Augmented'
-DATA_PATH = 'C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1'
+# AUGMENT_PATH = 'C:/Niranjan/Ashoka/Research/TNBC/SimilarityNet/Data/Augmented'
+AUGMENT_PATH = '/storage/tnbc/gen1_label/224_aug'
+# DATA_PATH = 'C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1'
+DATA_PATH = '/storage/tnbc/gen1_label/224_gen1'
 
 def create_pos_df(aug_df):
     pos_df = pd.DataFrame(index=np.arange(0, len(aug_df)),columns = ["img_1", "img_2", "similarity"])
@@ -45,7 +47,7 @@ def create_neg_df():
     neg_df.to_csv('./neg_df.csv')
     return neg_df
 
-def main():
+def dataset_df_main():
     aug_df = pd.read_csv(os.path.join(AUGMENT_PATH, 'augmented.csv'), index_col=0)
     
     pos_df = create_pos_df(aug_df)
@@ -57,4 +59,4 @@ def main():
     return
 
 if __name__ == "__main__":
-    main()
+    dataset_df_main()
