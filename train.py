@@ -28,6 +28,7 @@ def make_tf_dataset(df):
     # Create a TensorFlow dataset from the numpy arrays
     dataset = tf.data.Dataset.from_tensor_slices((img1, img2, similarity))
     dataset = dataset.shuffle(buffer_size=len(df))
+    dataset = dataset.map(lambda img1, img2, similarity: ((img1, img2), similarity))
 
     train_size = int(len(df) * 0.8)
     valid_size = len(df) - train_size
@@ -44,7 +45,7 @@ def train_main():
     train_ds, valid_ds = make_tf_dataset(data_df)
     
     # early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=3)
-    history = model.fit(train_ds, epochs=20, validation_data=valid_ds)
+    history = model.fit(train_ds, epochs=20, validation_data=valid_ds, batch_size=32)
     plot_accuracy(history)
     
     
