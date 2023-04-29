@@ -38,7 +38,7 @@ def make_tf_dataset(df):
     return train_dataset, valid_dataset
 
 def main():
-    data_df = pd.read_csv('/home/niranjan.rajesh_ug23/TNBC/SimilarityNet', index_col=0)
+    data_df = pd.read_csv('/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/data_df.csv', index_col=0)
     model = get_model()
     
     train_ds, valid_ds = make_tf_dataset(data_df)
