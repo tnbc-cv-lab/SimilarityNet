@@ -55,7 +55,7 @@ def dataset_df_main():
     
     data_df = pd.concat([pos_df, neg_df])
 
-    data_df.to_csv('./data_df.csv')
+    data_df.to_csv('/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/data_df.csv')
     return
 
 if __name__ == "__main__":
