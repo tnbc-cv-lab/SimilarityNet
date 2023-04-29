@@ -28,7 +28,7 @@ def make_tf_dataset(df):
     # Create a TensorFlow dataset from the numpy arrays
     dataset = tf.data.Dataset.from_tensor_slices((img1, img2, similarity))
     dataset = dataset.shuffle(buffer_size=len(df))
-    dataset = dataset.map(lambda img1, img2, similarity: ((img1, img2), similarity))
+    dataset = dataset.map(lambda img1, img2, similarity: ((img1, img2), similarity)).batch(32)
 
     train_size = int(len(df) * 0.8)
     valid_size = len(df) - train_size
