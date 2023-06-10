@@ -8,7 +8,7 @@ import random
 AUGMENT_PATH = '/storage/tnbc/gen1_label/224_aug'
 # DATA_PATH = 'C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1'
 DATA_PATH = '/storage/tnbc/gen1_label/224_gen1'
-RESULT_PATH = '/home/niranjan/Research/TNBC/SimilarityNet/Results'
+RESULT_PATH = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/Results'
 
 def create_pos_df(aug_df):
     pos_df = pd.DataFrame(index=np.arange(0, len(aug_df)),columns = ["img_1", "img_2", "similarity"])
