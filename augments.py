@@ -39,7 +39,8 @@ def flip_image(img_path, df, count):
     return
 
 def augment_main():
-    os.remove(output_dir+'/augmented.csv')
+    aug_dir_path = output_dir+'/augmented.csv'
+    if os.path.exists(path=aug_dir_path): os.remove(aug_dir_path)
     positive_classes = ['Tumour', 'TILs', 'Stroma', 'Fat Cells', 'White Space']
     
     df = pd.DataFrame(index=np.arange(0, 10000),columns = ["img_name", "real_path", "aug_path"])
@@ -56,7 +57,7 @@ def augment_main():
             count += 1
     # save df as csv
     df = df.dropna()
-    df.to_csv(os.path.join(output_dir, 'augmented.csv'))
+    df.to_csv(aug_dir_path)
     return
         
 if __name__ == "__main__":
