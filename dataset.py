@@ -19,6 +19,8 @@ def create_pos_df(aug_df):
         similarity = 1
         pos_df.iloc[index] = [img_1, img_2, similarity]
     
+    pos_df = pos_df.dropna()
+    pos_df.to_csv('./pos_df.csv')
     return pos_df
 
 def create_neg_df():

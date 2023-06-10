@@ -4,10 +4,10 @@ import cv2 as cv
 import pandas as pd
 from PIL import Image
 
-# data_dir = 'C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1'
-data_dir = '/storage/tnbc/gen1_label/224_gen1'
-# output_dir = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/Augmented'
-output_dir = '/storage/tnbc/gen1_label/224_aug'
+data_dir = 'C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1'
+# data_dir = '/storage/tnbc/gen1_label/224_gen1'
+output_dir = 'C:/Niranjan/Ashoka/Research/TNBC/SimilarityNet/Data/Augmented'
+# output_dir = '/storage/tnbc/gen1_label/224_aug'
 
 
 
@@ -39,6 +39,7 @@ def flip_image(img_path, df, count):
     return
 
 def augment_main():
+    os.remove(output_dir+'/augmented.csv')
     positive_classes = ['Tumour', 'TILs', 'Stroma', 'Fat Cells', 'White Space']
     
     df = pd.DataFrame(index=np.arange(0, 10000),columns = ["img_name", "real_path", "aug_path"])
