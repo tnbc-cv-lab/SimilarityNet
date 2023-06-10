@@ -6,7 +6,7 @@ RESULT_PATH = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/'
 def plot_accuracy(history):
     plt.clf()
     plt.plot(history.history['accuracy'])
-    plt.plot(history.history['val_accuracy'])
+    # plt.plot(history.history['val_accuracy'])
     plt.title('model accuracy')
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
