@@ -47,6 +47,10 @@ def train_main():
     # early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=3)
     history = model.fit(train_ds, epochs=20, validation_data=valid_ds, batch_size=32)
     plot_accuracy(history)
+
+    model_path = '"/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/SimNet_0.h5"'
+    model.save(model_path)
+    print("Model saved to: ", model_path)
     
     
 if __name__ == "__main__":

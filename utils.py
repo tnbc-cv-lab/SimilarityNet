@@ -1,4 +1,4 @@
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 
 RESULT_PATH = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/'
