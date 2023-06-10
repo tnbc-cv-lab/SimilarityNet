@@ -4,10 +4,10 @@ import cv2 as cv
 import pandas as pd
 from PIL import Image
 
-data_dir = 'C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1'
-# data_dir = '/storage/tnbc/gen1_label/224_gen1'
-output_dir = 'C:/Niranjan/Ashoka/Research/TNBC/SimilarityNet/Data/Augmented'
-# output_dir = '/storage/tnbc/gen1_label/224_aug'
+# data_dir = 'C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1'
+data_dir = '/storage/tnbc/gen1_label/224_gen1'
+# output_dir = 'C:/Niranjan/Ashoka/Research/TNBC/SimilarityNet/Data/Augmented'
+output_dir = '/storage/tnbc/gen1_label/224_aug'
 
 
 
