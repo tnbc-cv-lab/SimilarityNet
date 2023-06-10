@@ -45,9 +45,9 @@ def augment_main():
     
     df = pd.DataFrame(index=np.arange(0, 10000),columns = ["img_name", "real_path", "aug_path"])
     
+    count = 0
     for class_dir in positive_classes:
         class_dir_path = os.path.join(data_dir, class_dir)
-        count = 0
         
         for img_name in os.listdir(class_dir_path):
             img_path = os.path.join(class_dir_path, img_name)

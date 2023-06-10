@@ -8,6 +8,7 @@ import random
 AUGMENT_PATH = '/storage/tnbc/gen1_label/224_aug'
 # DATA_PATH = 'C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1'
 DATA_PATH = '/storage/tnbc/gen1_label/224_gen1'
+RESULT_PATH = '/home/niranjan/Research/TNBC/SimilarityNet/Results'
 
 def create_pos_df(aug_df):
     pos_df = pd.DataFrame(index=np.arange(0, len(aug_df)),columns = ["img_1", "img_2", "similarity"])
@@ -20,7 +21,7 @@ def create_pos_df(aug_df):
         pos_df.iloc[index] = [img_1, img_2, similarity]
     
     pos_df = pos_df.dropna()
-    pos_df.to_csv('./pos_df.csv')
+    pos_df.to_csv(f'{RESULT_PATH}/pos_df.csv')
     return pos_df
 
 def create_neg_df():
@@ -46,7 +47,7 @@ def create_neg_df():
                     counter += 1    
         
     neg_df = neg_df.dropna()
-    neg_df.to_csv('./neg_df.csv')
+    neg_df.to_csv(f'{RESULT_PATH}/neg_df.csv')
     return neg_df
 
 def dataset_df_main():

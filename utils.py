@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-RESULT_PATH = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/'
+RESULT_PATH = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/Results/'
 
 def plot_accuracy(history):
     plt.clf()

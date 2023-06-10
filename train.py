@@ -35,7 +35,7 @@ def make_tf_dataset(df):
 
     train_dataset = dataset.take(train_size)
     valid_dataset = dataset.skip(train_size).take(valid_size)
-    
+    print(valid_dataset)
     return train_dataset, valid_dataset
 
 def train_main():
@@ -45,10 +45,10 @@ def train_main():
     train_ds, valid_ds = make_tf_dataset(data_df)
     
     # early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=3)
-    history = model.fit(train_ds, epochs=20, validation_data=valid_ds, batch_size=32)
+    history = model.fit(train_ds, epochs=20, validation_data=valid_ds, batch_size=32, verbose=1)
     plot_accuracy(history)
 
-    model_path = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/SimNet_0.h5'
+    model_path = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/Results/SimNet_2.h5'
     model.save(model_path)
     print("Model saved to: ", model_path)
     
