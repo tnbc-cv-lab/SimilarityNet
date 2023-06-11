@@ -48,7 +48,7 @@ def train_main():
     history = model.fit(train_ds, epochs=20, validation_data=valid_ds, batch_size=32, verbose=1)
     plot_accuracy(history)
 
-    model_path = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/Results/SimNet_2.h5'
+    model_path = '/home/niranjan.rajesh_ug23/TNBC/SimilarityNet/Results/SimNet_3.h5'
     model.save(model_path)
     print("Model saved to: ", model_path)
     
