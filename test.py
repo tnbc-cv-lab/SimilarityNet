@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import shutil
 
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
-new_model = load_model('C:/Niranjan/Ashoka/Research/TNBC/SimilarityNet/Models/Results/SimNet_2.h5')
+new_model = load_model('C:/Niranjan/Ashoka/Research/TNBC/SimilarityNet/Models/Results/SimNet_3.h5')
 
 DATA_PATH = "C:/Niranjan/Ashoka/Research/TNBC/Data/224Labelledv0.1"
 RESULTS_PATH = "C:/Niranjan/Ashoka/Research/TNBC/SimilarityNet/Test_Results"
@@ -21,7 +21,7 @@ class_names.remove('Black Space')
 for i in range(len(class_names)):
     c1 = class_names[i]
     for j in range(i, len(class_names)):
-        for n in range(3):
+        for n in range(2):
             c2 = class_names[j]
             
             c1_path = os.path.join(DATA_PATH, c1)

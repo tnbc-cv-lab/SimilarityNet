@@ -12,11 +12,11 @@ def get_model():
 
     # Shared convolutional layers
     conv_1 = Conv2D(32, (3, 3), activation='relu', padding='same')(concatenated_inputs)
-    # conv_2 = Conv2D(64, (3, 3), activation='relu', padding='same')
-    pool_1 = MaxPooling2D(pool_size=(2, 2))(conv_1)
+    conv_2 = Conv2D(64, (3, 3), activation='relu', padding='same')(conv_1)
+    pool_1 = MaxPooling2D(pool_size=(2, 2))(conv_2)
     flatten = Flatten()(pool_1)
 
-    fc_1 = Dense(128, activation='relu')(flatten)
+    fc_1 = Dense(256, activation='relu')(flatten)
     output = Dense(1, activation='sigmoid')(fc_1)
 
 
